@@ -75,34 +75,5 @@ int CTasksBar::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	AddTask (nGroup1, _T("Show ToDo List"), 0, ID_TASKS_SHOW_TODO);
 	AddTask (nGroup1, _T("Show All"), -1, ID_TASKS_SHOW_ALL);
 
-	//---------------
-	// Add Find Task:
-	//---------------
-	int nGroup2 = AddGroup (nPage, _T("Find Task:"));
-
-	DWORD dwEditStyle = WS_CHILD | WS_VISIBLE | ES_AUTOHSCROLL;
-
-	m_Font.CreateStockObject (DEFAULT_GUI_FONT);
-
-	if (!m_wndEdit.Create (dwEditStyle, rectDummy, this, (UINT)-1))
-	{
-		TRACE0("Failed to create the edit window\n");
-		return -1;      // fail to create
-	}
-
-	m_wndEdit.SetFont (&m_Font);
-	m_wndEdit.m_bVisualManagerStyle = TRUE;
-	
-	AddWindow (nGroup2, m_wndEdit.GetSafeHwnd (), globalData.GetTextHeight ());
-
-	//--------------------
-	// Additional actions:
-	//--------------------
-
-	int nGroup3 = AddGroup (nPage, _T("Additional Actions:"));
-
-	AddTask (nGroup3, _T("Add New Group"), -1, ID_DUMMY);
-	AddTask (nGroup3, _T("Customize Current View..."), -1, ID_DUMMY);
-
 	return 0;
 }

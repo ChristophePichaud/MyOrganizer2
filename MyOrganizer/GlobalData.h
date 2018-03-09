@@ -9,24 +9,16 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-const int c_ViewCount = 6;
+const int c_ViewCount = 2;
 const LPCTSTR c_ViewNames[c_ViewCount] =
 {
-	_T("Home"), 
-	_T("Mail"),
-	_T("Calendar"),
 	_T("Tasks"),
-	_T("Macros"),
-	_T("Gantt")
+	_T("Macros")
 };
 const LPCTSTR c_ViewDescription[c_ViewCount] =
 {
-	_T("Welcome to BCGControlBar Pro Demonstration! Please click Ribbon Control tab to activate appropriate view."),
-	_T("The current view demonstrates Report Control in read-only mode. You can organize the structure by using \"Field Chooser\" and \"Group By Box\".  Click \"Flag\" to set the message status."),
-	_T("This view demonstrates fully functional Calendar (Planner) control. You can create/edit/remove appointments and recurring events."),
 	_T("This view demonstrates usage of Database Grid control in read-only mode. You can organize the structure by using \"Field Chooser\" and \"Group By Box\"."),
-	_T("This view demonstrates advanced Edit control that can be used in development environments. In addition, you can see how to use Office 2007-style mini-toolbar (\"floaty\") in order to manipulate selected text. You can see IntelliSense in action by typing \"System.\", \"Drawing.\" or \"IO.\" (case-sensitive!)"),
-	_T("This view demonstrates Gantt control.")
+	_T("This view demonstrates advanced Edit control that can be used in development environments. In addition, you can see how to use Office 2007-style mini-toolbar (\"floaty\") in order to manipulate selected text. You can see IntelliSense in action by typing \"System.\", \"Drawing.\" or \"IO.\" (case-sensitive!)")
 };
 
 const int c_CategoryCount = 6;

@@ -29,12 +29,8 @@ public:
 	enum XMode
 	{
 		e_ModeUndefined	= -1,
-		e_ModeShortcuts = 0,
-		e_ModeMail		= 1,
-		e_ModeCalendar	= 2,
-		e_ModeTasks     = 3,
-		e_ModeMacros	= 4,
-		e_ModeGantt		= 5
+		e_ModeTasks     = 0,
+		e_ModeMacros	= 1,
 	};
 
 protected: // create from serialization only

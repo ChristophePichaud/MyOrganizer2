@@ -98,11 +98,8 @@ protected:
 
 protected:
 	CShortcutsBar			m_wndShortcutsBar;
-	CMailBar				m_wndMailBar;
-	CCalendarBar			m_wndCalendarBar;
 	CTasksBar				m_wndTasksBar;
 	CMacrosBar				m_wndMacrosBar;
-	CGanttBar				m_wndGanttBar;
 };
 
 /////////////////////////////////////////////////////////////////////////////

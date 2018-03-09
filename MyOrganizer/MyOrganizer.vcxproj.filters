@@ -111,55 +111,7 @@
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Planner\Appointment.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\AppointmentFrame.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\GotoDayDialog.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\PlannerClockIcons.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\PlannerTooltipCtrl.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\PrintTypeDlg.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\RecurrenceConfirmDlg.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\RecurrenceDlg.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\RecurrenceRuleDailyDlg.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\RecurrenceRuleDlg.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\RecurrenceRuleMonthlyDlg.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\RecurrenceRuleWeeklyDlg.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Planner\RecurrenceRuleYearlyDlg.cpp">
-      <Filter>Planner</Filter>
-    </ClCompile>
-    <ClCompile Include="Views\CalendarPlannerView.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
-    <ClCompile Include="Views\GanttView.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
     <ClCompile Include="Views\MacrosEditView.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
-    <ClCompile Include="Views\MailView.cpp">
       <Filter>Views</Filter>
     </ClCompile>
     <ClCompile Include="Views\ShortcutsView.cpp">
@@ -194,24 +146,6 @@
     </ClCompile>
     <ClCompile Include="MacrosEdit\GotoLineDlg.cpp">
       <Filter>MacrosEdit</Filter>
-    </ClCompile>
-    <ClCompile Include="Mail\MailFrame.cpp">
-      <Filter>Mail</Filter>
-    </ClCompile>
-    <ClCompile Include="Mail\MailReportCtrl.cpp">
-      <Filter>Mail</Filter>
-    </ClCompile>
-    <ClCompile Include="GanttBar.cpp">
-      <Filter>Gantt</Filter>
-    </ClCompile>
-    <ClCompile Include="Gantt\GanttFrame.cpp">
-      <Filter>Gantt</Filter>
-    </ClCompile>
-    <ClCompile Include="Gantt\GanttTooltipCtrl.cpp">
-      <Filter>Gantt</Filter>
-    </ClCompile>
-    <ClCompile Include="Gantt\GotoDayDialog2.cpp">
-      <Filter>Gantt</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -277,55 +211,7 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Planner\Appointment.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\AppointmentFrame.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\GotoDayDialog.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\PlannerClockIcons.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\PlannerTooltipCtrl.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\PrintTypeDlg.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\RecurrenceConfirmDlg.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\RecurrenceDlg.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\RecurrenceRuleDailyDlg.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\RecurrenceRuleDlg.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\RecurrenceRuleMonthlyDlg.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\RecurrenceRuleWeeklyDlg.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Planner\RecurrenceRuleYearlyDlg.h">
-      <Filter>Planner</Filter>
-    </ClInclude>
-    <ClInclude Include="Views\CalendarPlannerView.h">
-      <Filter>Views</Filter>
-    </ClInclude>
-    <ClInclude Include="Views\GanttView.h">
-      <Filter>Views</Filter>
-    </ClInclude>
     <ClInclude Include="Views\MacrosEditView.h">
-      <Filter>Views</Filter>
-    </ClInclude>
-    <ClInclude Include="Views\MailView.h">
       <Filter>Views</Filter>
     </ClInclude>
     <ClInclude Include="Views\ShortcutsView.h">
@@ -360,24 +246,6 @@
     </ClInclude>
     <ClInclude Include="MacrosEdit\GotoLineDlg.h">
       <Filter>MacrosEdit</Filter>
-    </ClInclude>
-    <ClInclude Include="Mail\MailFrame.h">
-      <Filter>Mail</Filter>
-    </ClInclude>
-    <ClInclude Include="Mail\MailReportCtrl.h">
-      <Filter>Mail</Filter>
-    </ClInclude>
-    <ClInclude Include="GanttBar.h">
-      <Filter>Gantt</Filter>
-    </ClInclude>
-    <ClInclude Include="Gantt\GanttFrame.h">
-      <Filter>Gantt</Filter>
-    </ClInclude>
-    <ClInclude Include="Gantt\GanttTooltipCtrl.h">
-      <Filter>Gantt</Filter>
-    </ClInclude>
-    <ClInclude Include="Gantt\GotoDayDialog2.h">
-      <Filter>Gantt</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

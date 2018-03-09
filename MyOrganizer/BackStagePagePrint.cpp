@@ -94,64 +94,6 @@ void CBackStagePagePrint::OnInitPrintControls()
 		{
 			pFrame = ((CMDIFrameWnd*)pFrame)->GetActiveFrame ();
 		}
-
-		CCalendarPlannerView* pView = DYNAMIC_DOWNCAST(CCalendarPlannerView, pFrame->GetActiveView ());
-		if (pView != NULL)
-		{
-			CRuntimeClass* pRTC = (CRuntimeClass*)CBCGPRibbonBackstagePagePrint::s_BCGPrintInfo.lpParam;
-
-			m_wndType.SetIcons (IDB_BS_PRINT_TYPE, 32);
-
-			m_wndType.AddString (_T("Daily Style"), 0);
-			m_wndType.AddString (_T("Weekly Agenda Style"), 1);
-			m_wndType.AddString (_T("Monthly Style"), 2);
-			m_wndType.AddString (_T("Two-fold Style"), 3);
-
-			if (pRTC == NULL)
-			{
-				pRTC = RUNTIME_CLASS(CBCGPPlannerPrintDay);
-
-				switch (pView->GetType ())
-				{
-				case CBCGPPlannerManagerCtrl::BCGP_PLANNER_TYPE_DAY:
-					if (pView->GetViewDuration () != 1)
-					{
-						pRTC = RUNTIME_CLASS(CBCGPPlannerPrintDual);
-					}
-					break;
-				case CBCGPPlannerManagerCtrl::BCGP_PLANNER_TYPE_WORK_WEEK:
-				case CBCGPPlannerManagerCtrl::BCGP_PLANNER_TYPE_WEEK:
-					pRTC = RUNTIME_CLASS(CBCGPPlannerPrintWeek);
-					break;
-				case CBCGPPlannerManagerCtrl::BCGP_PLANNER_TYPE_MONTH:
-					pRTC = RUNTIME_CLASS(CBCGPPlannerPrintMonth);
-					break;
-				}
-			}
-
-			if (pRTC == RUNTIME_CLASS(CBCGPPlannerPrintDay))
-			{
-				m_wndType.SetCurSel (0);
-			}
-			else if (pRTC == RUNTIME_CLASS(CBCGPPlannerPrintWeek))
-			{
-				m_wndType.SetCurSel (1);
-			}
-			else if (pRTC == RUNTIME_CLASS(CBCGPPlannerPrintMonth))
-			{
-				m_wndType.SetCurSel (2);
-			}
-			else
-			{
-				m_wndType.SetCurSel (3);
-			}
-
-			CBCGPRibbonBackstagePagePrint::s_BCGPrintInfo.lpParam = (LPVOID)pRTC;
-		}
-		else
-		{
-			m_wndType.ShowWindow (FALSE);
-		}
 	}
 
 	CBCGPRibbonBackstagePagePrint::OnInitPrintControls();

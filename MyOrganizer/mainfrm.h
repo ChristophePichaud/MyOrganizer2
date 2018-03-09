@@ -40,7 +40,6 @@ public:
 
 	CCalendarBar* GetCalendar ()
 	{
-		return &m_wndOutlookBar.m_wndCalendarBar;
 	}
 	COutlookBar* GetOutlookBar ()
 	{
@@ -138,7 +137,7 @@ protected:
 
 protected:
 	CBCGPRibbonBar			m_wndRibbonBar;	// Ribbon control bar
-	CBCGPRibbonCategory*	m_pRibbonCategory[6];
+	CBCGPRibbonCategory*	m_pRibbonCategory[2];
 	CBCGPRibbonMainButton	m_MainButton;	// Ribbon main button
 	CBCGPRibbonStatusBar	m_wndStatusBar;
 	COutlookBar				m_wndOutlookBar;

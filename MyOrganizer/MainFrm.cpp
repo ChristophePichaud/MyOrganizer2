@@ -109,9 +109,6 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	globalData.m_bUseBuiltIn32BitIcons = TRUE;
 
 	CBCGPToolBar::AddToolBarForImageCollection (IDR_MAINFRAME, IDB_MAINFRAME_HC);
-	CBCGPToolBar::AddToolBarForImageCollection (IDR_PLANNER, IDB_PLANNER_HC);
-	CBCGPToolBar::AddToolBarForImageCollection (IDR_GANTT, IDB_GANTT_HC);
-	CBCGPToolBar::AddToolBarForImageCollection (IDR_CATEGORY, IDB_CATEGORY_HC);
 
 	if (!CreateRibbonBar ())
 	{
@@ -259,32 +256,12 @@ void CMainFrame::ActivateCategory (CBCGPRibbonCategory* pCategory)
 	if (pCategory == m_pRibbonCategory[0])
 	{
 		nShortcut = 0;
-		mode = CBCGPOrganizerDoc::e_ModeShortcuts;
+		mode = CBCGPOrganizerDoc::e_ModeTasks;
 	}
 	else if (pCategory == m_pRibbonCategory[1])
 	{
 		nShortcut = 1;
-		mode = CBCGPOrganizerDoc::e_ModeMail;
-	}
-	else if (pCategory == m_pRibbonCategory[2])
-	{
-		nShortcut = 2;
-		mode = CBCGPOrganizerDoc::e_ModeCalendar;
-	}
-	else if (pCategory == m_pRibbonCategory[3])
-	{
-		nShortcut = 3;
-		mode = CBCGPOrganizerDoc::e_ModeTasks;
-	}
-	else if (pCategory == m_pRibbonCategory[4])
-	{
-		nShortcut = 4;
 		mode = CBCGPOrganizerDoc::e_ModeMacros;
-	}
-	else if (pCategory == m_pRibbonCategory[5])
-	{
-		nShortcut = 5;
-		mode = CBCGPOrganizerDoc::e_ModeGantt;
 	}
 
 	ASSERT (mode != CBCGPOrganizerDoc::e_ModeUndefined);
@@ -347,12 +324,8 @@ BOOL CMainFrame::CreateRibbonBar ()
 	//----------
 	// Add tabs:
 	//----------
-	m_pRibbonCategory[0] = AddTab_Shortcuts ();
-	m_pRibbonCategory[1] = AddTab_Mail ();
-	m_pRibbonCategory[2] = AddTab_Calendar ();
-	m_pRibbonCategory[3] = AddTab_Tasks ();
-	m_pRibbonCategory[4] = AddTab_Macros ();
-	m_pRibbonCategory[5] = AddTab_Gantt ();
+	m_pRibbonCategory[0] = AddTab_Tasks ();
+	m_pRibbonCategory[1] = AddTab_Macros ();
 
 	//-----------------------------------
 	// Add quick access toolbar commands:
@@ -645,12 +618,8 @@ void CMainFrame::AddMainCategory ()
 		pMainPanel->Add (new CBCGPRibbonButton (ID_FILE_CLOSE, _T("&Close"), 8, 8));
 
 		CMainButtonsGroup* pGroup = new CMainButtonsGroup (_T("Shortcuts"));
-		pGroup->AddButton (new CBCGPRibbonButton (ID_ACTIVATE_VIEW_0, _T("&1. Home"), 28));
-		pGroup->AddButton (new CBCGPRibbonButton (ID_ACTIVATE_VIEW_1, _T("&2. Mail"), 29));
-		pGroup->AddButton (new CBCGPRibbonButton (ID_ACTIVATE_VIEW_2, _T("&3. Calendar"), 30));
-		pGroup->AddButton (new CBCGPRibbonButton (ID_ACTIVATE_VIEW_3, _T("&4. Tasks"), 31));
-		pGroup->AddButton (new CBCGPRibbonButton (ID_ACTIVATE_VIEW_4, _T("&5. Macros"), 32));
-		pGroup->AddButton (new CBCGPRibbonButton (ID_ACTIVATE_VIEW_5, _T("&6. Gantt"), 33));
+		pGroup->AddButton (new CBCGPRibbonButton (ID_ACTIVATE_VIEW_0, _T("&1. Macros"), 32));
+		pGroup->AddButton (new CBCGPRibbonButton (ID_ACTIVATE_VIEW_1, _T("&2. Gantt"), 33));
 		pMainPanel->AddToRight (pGroup);
 
 		pMainPanel->AddToBottom (new CBCGPRibbonMainPanelButton (ID_TOOLS_OPTIONS, _T("Opt&ions"), 26));
@@ -682,116 +651,17 @@ void CMainFrame::AddMainCategory ()
 
 CBCGPRibbonCategory* CMainFrame::AddTab_Shortcuts ()
 {
-	CBCGPRibbonCategory* pCategory = m_wndRibbonBar.AddCategory (
-		c_ViewNames[CBCGPOrganizerDoc::e_ModeShortcuts], IDB_SHORTCUTS_RIBBON_SMALL, IDB_SHORTCUTS_RIBBON_LARGE);
-	pCategory->SetKeys (_T("h"));
-
-	CBCGPRibbonPanel* pPanelActions = pCategory->AddPanel (_T("Actions"), m_PanelImages.ExtractIcon (1));
-	pPanelActions->Add (new CBCGPRibbonButton (ID_SHORTCUTS_HOME, _T("Home Page"), 0, 0));
-	pPanelActions->Add (new CBCGPRibbonButton (ID_SHORTCUTS_MAIL, _T("E-mail"), 1, 1));	
-	pPanelActions->Add (new CBCGPRibbonButton (ID_SHORTCUTS_DOWNLOAD, _T("Download Evaluation"), 2, 2));
-	pPanelActions->Add (new CBCGPRibbonSeparator ());
-	pPanelActions->Add (new CBCGPRibbonButton (ID_SHORTCUTS_ABOUT, _T("About Organizer"), 3, 3));
-
-	return pCategory;
+	return NULL;
 }
 
 CBCGPRibbonCategory* CMainFrame::AddTab_Mail ()
 {
-	CBCGPRibbonCategory* pCategory = m_wndRibbonBar.AddCategory (
-		c_ViewNames[CBCGPOrganizerDoc::e_ModeMail], IDB_MAIL_SMALL, IDB_MAIL_LARGE);
-	pCategory->SetKeys (_T("m"));
-
-	CBCGPRibbonPanel* pPanelActions = pCategory->AddPanel (_T("Actions"), m_PanelImages.ExtractIcon (2));
-	pPanelActions->Add (new CBCGPRibbonButton (ID_MAIL_NEW, _T("New"), 0, 0));
-	pPanelActions->Add (new CBCGPRibbonButton (ID_MAIL_REMOVE, _T("Delete"), 1, 1));
-	pPanelActions->Add (new CBCGPRibbonButton (ID_MAIL_FIND, _T("Find"), 2, 2));
-
-	CBCGPRibbonPanel* pPanelNames = pCategory->AddPanel (_T("Names"), m_PanelImages.ExtractIcon (3));
-	pPanelNames->Add (new CBCGPRibbonButton (ID_MAIL_NAMES_AB, _T("Address Book"), 3, 3));
-	pPanelNames->Add (new CBCGPRibbonButton (ID_MAIL_NAMES_CHECK, _T("Check Names"), 4, 4));
-
-	CBCGPRibbonPanel* pPanelView = pCategory->AddPanel (_T("View"), m_PanelImages.ExtractIcon (4));
-	pPanelView->Add (new CBCGPRibbonButton (ID_GRID_VIEW_GROUPBOX, _T("Group By Box"), 5, -1));
-	pPanelView->Add (new CBCGPRibbonButton (ID_GRID_VIEW_FIELDCHOOSER, _T("Field Chooser"), 6, -1));
-	pPanelView->Add (new CBCGPRibbonCheckBox (ID_GRID_VIEW_COLUMN_AUTO_RESIZE, _T("Column Auto-Resize")));
-
-	return pCategory;
+	return NULL;
 }
 
 CBCGPRibbonCategory* CMainFrame::AddTab_Calendar ()
 {
-	CBCGPRibbonCategory* pCategory = m_wndRibbonBar.AddCategory (
-		c_ViewNames[CBCGPOrganizerDoc::e_ModeCalendar], IDB_PLANNER_SMALL, IDB_PLANNER_LARGE);
-	pCategory->SetKeys (_T("c"));
-
-	CBCGPRibbonPanel* pPanelClipboard = pCategory->AddPanel (_T("Clipboard"), m_PanelImages.ExtractIcon (5));
-	pPanelClipboard->Add (new CBCGPRibbonButton (ID_EDIT_PASTE, _T("Paste"), 0, 0));
-	pPanelClipboard->Add (new CBCGPRibbonButton (ID_EDIT_CUT, _T("Cut"), 1, -1));
-	pPanelClipboard->Add (new CBCGPRibbonButton (ID_EDIT_COPY, _T("Copy"), 2, -1));
-
-	CBCGPRibbonPanel* pPanelActions = pCategory->AddPanel (_T("Actions"), m_PanelImages.ExtractIcon (6));
-	CBCGPRibbonButton* pBtnNew = new CBCGPRibbonButton (ID_PLANNER_NEW, _T("New"), 3, 1);
-	pBtnNew->SetMenu (IDR_PLANNER_NEW, TRUE);
-	pPanelActions->Add (pBtnNew);
-	pPanelActions->Add (new CBCGPRibbonButton (ID_PLANNER_OPEN_APP, _T("Open"), 4, 2));
-	pPanelActions->Add (new CBCGPRibbonButton (ID_PLANNER_REMOVE_APP, _T("Delete"), 5, 3));
-	CBCGPRibbonButton* pBtnGoto = new CBCGPRibbonButton (0, _T("Go To\ng"), 6, 4);
-	pBtnGoto->SetMenu (IDR_PLANNER_GOTO);
-	pPanelActions->Add (pBtnGoto);
-
-	CBCGPRibbonPanel* pPanelMode = pCategory->AddPanel (_T("Mode"), m_PanelImages.ExtractIcon (7));
-	pPanelMode->Add (new CBCGPRibbonButton (ID_PLANNER_MODE_DAY, _T("Day"), 7, 5));
-	pPanelMode->Add (new CBCGPRibbonButton (ID_PLANNER_MODE_WORKWEEK, _T("Work Week"), 8, 6));
-	pPanelMode->Add (new CBCGPRibbonButton (ID_PLANNER_MODE_WEEK, _T("Week"), 9, 7));
-	pPanelMode->Add (new CBCGPRibbonButton (ID_PLANNER_MODE_MONTH, _T("Month"), 10, 8));
-	pPanelMode->Add (new CBCGPRibbonButton (ID_PLANNER_MODE_SCHEDULE, _T("Schedule"), 19, 11));
-
-	CBCGPRibbonPanel* pPanelView = pCategory->AddPanel (_T("View"), m_PanelImages.ExtractIcon (8));
-	CBCGPRibbonButton* pBtnScale = new CBCGPRibbonButton (ID_PLANNER_TIMESCALE, _T("Time Scale"), 11, 9);
-	pBtnScale->SetMenu (IDR_PLANNER_TIMESCALE, FALSE);
-	pPanelView->Add (pBtnScale);
-	pPanelView->Add (new CBCGPRibbonCheckBox (ID_PLANNER_DRAW_TIME_AS_ICONS, _T("Draw time as icons")));
-	pPanelView->Add (new CBCGPRibbonCheckBox (ID_PLANNER_DRAW_TIME_FINISH, _T("Show end time")));
-	pPanelView->Add (new CBCGPRibbonCheckBox (ID_PLANNER_COMPRESS_WEEKEND, _T("Compress weekend")));
-	pPanelView->Add (new CBCGPRibbonSeparator ());
-
-	CBCGPRibbonColorButton* pColor = new CBCGPRibbonColorButton (ID_PLANNER_DRAW_BACKGROUND, 
-		_T("Background\nsb"), TRUE, 12, 10, 
-		theApp.m_OptionsPlanner.m_clrBackground == CLR_DEFAULT
-			? (COLORREF)-1
-			: theApp.m_OptionsPlanner.m_clrBackground);
-	pColor->SetDefaultCommand (FALSE);
-	pColor->SetAlwaysLargeImage ();
-	pColor->EnableAutomaticButton (_T("Default"), RGB (255, 255, 255));
-	pColor->SetColumns (6);
-	pColor->AddColorsGroup (_T("Calendar Colors"), m_lstCalendarColors);
-	pPanelView->Add (pColor);
-
-	m_pCalendarColors = pColor;
-
-	pPanelView->Add (new CBCGPRibbonButton (ID_PLANNER_DRAW_APP_GRADIENT, _T(""), 13, -1));
-	pPanelView->Add (new CBCGPRibbonButton (ID_PLANNER_DRAW_APP_ROUNDED, _T(""), 14, -1));
-	pPanelView->Add (new CBCGPRibbonButton (ID_PLANNER_DRAW_APP_DURATION, _T(""), 15, -1));
-
-	CBCGPRibbonButton* pElement = 
-		DYNAMIC_DOWNCAST(CBCGPRibbonButton, pPanelActions->FindByID (ID_PLANNER_NEW_APPOINTMENT));
-	if (pElement != NULL)
-	{
-		pElement->SetImageIndex (16, FALSE);
-	}
-	pElement = DYNAMIC_DOWNCAST(CBCGPRibbonButton, pPanelActions->FindByID (ID_PLANNER_NEW_REC_APPOINTMENT));
-	if (pElement != NULL)
-	{
-		pElement->SetImageIndex (17, FALSE);
-	}
-	pElement = DYNAMIC_DOWNCAST(CBCGPRibbonButton, pPanelActions->FindByID (ID_GOTO_TODAY));
-	if (pElement != NULL)
-	{
-		pElement->SetImageIndex (18, FALSE);
-	}
-
-	return pCategory;
+	return NULL;
 }
 
 CBCGPRibbonCategory* CMainFrame::AddTab_Tasks ()
@@ -887,59 +757,7 @@ CBCGPRibbonCategory* CMainFrame::AddTab_Macros ()
 
 CBCGPRibbonCategory* CMainFrame::AddTab_Gantt ()
 {
-	CBCGPRibbonCategory* pCategory = m_wndRibbonBar.AddCategory (
-		c_ViewNames[CBCGPOrganizerDoc::e_ModeGantt], IDB_GANTT_SMALL, IDB_GANTT_LARGE);
-	pCategory->SetKeys (_T("g"));
-
-	CBCGPRibbonPanel* pPanelClipboard = pCategory->AddPanel (_T("Clipboard"), m_PanelImages.ExtractIcon (5));
-	pPanelClipboard->Add (new CBCGPRibbonButton (ID_EDIT_PASTE, _T("Paste"), 0, 0));
-	pPanelClipboard->Add (new CBCGPRibbonButton (ID_EDIT_CUT, _T("Cut"), 1, -1));
-	pPanelClipboard->Add (new CBCGPRibbonButton (ID_EDIT_COPY, _T("Copy"), 2, -1));
-
-	CBCGPRibbonPanel* pPanelActions = pCategory->AddPanel (_T("Actions"), m_PanelImages.ExtractIcon (16));
-	CBCGPRibbonButton* pBtnNew = new CBCGPRibbonButton (ID_GANTT_NEW, _T("New"), 3, 1);
-	pBtnNew->SetMenu (IDR_GANTT_NEW, TRUE);
-	pPanelActions->Add (pBtnNew);	
-	pPanelActions->Add (new CBCGPRibbonButton (ID_GANTT_OPEN_TASK, _T("Open"), 4, 2));
-	pPanelActions->Add (new CBCGPRibbonButton (ID_GANTT_REMOVE_TASK, _T("Delete"), 5, 3));
-	CBCGPRibbonButton* pBtnGoto = new CBCGPRibbonButton (0, _T("Go To\ng"), 7, 5);
-	pBtnGoto->SetMenu (IDR_GANTT_GOTO);
-	pPanelActions->Add (pBtnGoto);
-
-	CBCGPRibbonPanel* pPanelManage = pCategory->AddPanel (_T("Manage"), m_PanelImages.ExtractIcon (17));
-	pPanelManage->Add (new CBCGPRibbonButton (ID_GANTT_LINK, _T("Link Tasks"), 11, -1));
-	pPanelManage->Add (new CBCGPRibbonButton (ID_GANTT_UNLINK, _T("Unlink Tasks"), 12, -1));
-	pPanelManage->Add (new CBCGPRibbonButton (ID_GANTT_MARK_COMPLETE, _T("Mark Complete"), 6, -1));//4));
-
-	CBCGPRibbonPanel* pPanelView = pCategory->AddPanel (_T("View"), m_PanelImages.ExtractIcon (18));
-
-	CBCGPRibbonColorButton* pColor = new CBCGPRibbonColorButton (ID_GANTT_DRAW_BACKGROUND, 
-		_T("Background\nsb"), TRUE, 8, 6, 
-		theApp.m_OptionsGantt.m_clrBackground == CLR_DEFAULT
-			? (COLORREF)-1
-			: theApp.m_OptionsGantt.m_clrBackground);
-	pColor->SetDefaultCommand (FALSE);
-	pColor->SetAlwaysLargeImage ();
-	pColor->EnableAutomaticButton (_T("Default"), RGB (255, 255, 255));
-	pColor->SetColumns (6);
-	pColor->AddColorsGroup (_T("Gantt Colors"), m_lstCalendarColors);
-	pPanelView->Add (pColor);
-
-	m_pGanttColors = pColor;
-
-	CBCGPRibbonButton* pElement = 
-		DYNAMIC_DOWNCAST(CBCGPRibbonButton, pPanelActions->FindByID (ID_GANTT_NEW_TASK));
-	if (pElement != NULL)
-	{
-		pElement->SetImageIndex (9, FALSE);
-	}
-	pElement = DYNAMIC_DOWNCAST(CBCGPRibbonButton, pPanelActions->FindByID (ID_GOTO_TODAY));
-	if (pElement != NULL)
-	{
-		pElement->SetImageIndex (10, FALSE);
-	}
-
-	return pCategory;
+	return NULL;
 }
 
 void CMainFrame::OnBeforeChangeVisualTheme(CBCGPWinApp::BCGP_VISUAL_THEME theme)
@@ -1059,11 +877,6 @@ BOOL CMainFrame::LoadFrame(UINT nIDResource, DWORD dwDefaultStyle, CWnd* pParent
 		CBCGPOrganizerDoc::e_ModeUndefined)
 	{
 		m_wndOutlookBar.SetActiveShortcut (0);
-	}
-
-	if (m_wndRibbonBar.GetHideFlags () == 0)
-	{
-		m_wndRibbonBar.SetActiveCategory (m_pRibbonCategory[m_wndOutlookBar.GetActiveShortcut ()]);
 	}
 
 	CBCGPDockManager* pDockManager = GetDockManager ();
@@ -1233,17 +1046,14 @@ void CMainFrame::OnUpdateDummy (CCmdUI* pCmdUI)
 
 void CMainFrame::OnShortcutsHome ()
 {
-	::ShellExecute (NULL, NULL, _T("http://www.bcgsoft.com"), NULL, NULL, NULL);
 }
 
 void CMainFrame::OnShortcutsMail ()
 {
-	::ShellExecute (NULL, NULL, _T("mailto:info@bcgsoft.com"), NULL, NULL, NULL);
 }
 
 void CMainFrame::OnShortcutsDownload ()
 {
-	::ShellExecute (NULL, NULL, _T("http://www.bcgsoft.com/download.htm"), NULL, NULL, NULL);
 }
 
 void CMainFrame::OnShortcutsAbout ()

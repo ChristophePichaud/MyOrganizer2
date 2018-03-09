@@ -197,7 +197,7 @@ void CShortcutsView::OnSize(UINT nType, int cx, int cy)
 void CShortcutsView::UpdateCaptionText ()
 {
 	CBCGPOrganizerDoc* pDoc = GetDocument ();
-	if (pDoc == NULL || pDoc->GetMode () != CBCGPOrganizerDoc::e_ModeShortcuts)
+	if (pDoc == NULL)
 	{
 		return;
 	}
@@ -206,7 +206,7 @@ void CShortcutsView::UpdateCaptionText ()
 
 	if (pFrame != NULL)
 	{
-		pFrame->SetCaptionText (_T("Designed by BCGSoft"));
+		pFrame->SetCaptionText (_T("Designed by Pic"));
 	}
 }
 

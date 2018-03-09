@@ -79,7 +79,6 @@ CBCGPOrganizerDoc::CBCGPOrganizerDoc()
 
 CBCGPOrganizerDoc::~CBCGPOrganizerDoc()
 {
-	theApp.WriteProfileInt (_T("Document"), _T("Mode"), (int)m_Mode);
 }
 
 BOOL CBCGPOrganizerDoc::OnNewDocument()
@@ -89,7 +88,7 @@ BOOL CBCGPOrganizerDoc::OnNewDocument()
 
 	if (m_Mode == e_ModeUndefined)
 	{
-		XMode mode = (XMode)theApp.GetProfileInt (_T("Document"), _T("Mode"), (int)e_ModeShortcuts);
+		XMode mode = XMode::e_ModeTasks;
 		SetMode (mode);
 	}
 
@@ -151,8 +150,7 @@ void CBCGPOrganizerDoc::SetMode(CBCGPOrganizerDoc::XMode mode)
 
         if(pOldView != pView)
         {
-			if ((modeOld == e_ModeMail || modeOld == e_ModeTasks) && 
-				pOldView != NULL)
+			if ((modeOld == e_ModeTasks) && pOldView != NULL)
 			{
 				CBCGPGridCtrl* pGridCtrl = ((CBCGPGridView*)(pOldView))->GetGridCtrl ();
 				ASSERT_VALID (pGridCtrl);
@@ -194,12 +192,8 @@ BOOL CBCGPOrganizerDoc::CreateViews(CFrameWnd* pFrameWnd, CCreateContext* pConte
 
     CRuntimeClass* pClass[c_ViewCount] = 
     {
-		RUNTIME_CLASS(CShortcutsView),
-		RUNTIME_CLASS(CMailView),
-        RUNTIME_CLASS(CCalendarPlannerView),
 		RUNTIME_CLASS(CTasksView),
-        RUNTIME_CLASS(CMacrosEditView),
-		RUNTIME_CLASS(CGanttView)
+        RUNTIME_CLASS(CMacrosEditView)
     };
 
     CCreateContext context = *pContext;
@@ -252,53 +246,18 @@ void CBCGPOrganizerDoc::SetDateInterval (const COleDateTime& date1, const COleDa
 
 void CBCGPOrganizerDoc::UpdateCalendar (const CPlannerOptions& options)
 {
-	for (POSITION pos = GetFirstViewPosition (); pos != NULL;)
-	{
-		CCalendarPlannerView* pView = DYNAMIC_DOWNCAST (CCalendarPlannerView,
-			GetNextView (pos));
-
-		if (pView != NULL)
-		{
-			pView->UpdateCalendar (options);
-		}
-	}
 }
 
 void CBCGPOrganizerDoc::UpdateGantt (const CGanttOptions& options)
 {
-	for (POSITION pos = GetFirstViewPosition (); pos != NULL;)
-	{
-		CGanttView* pView = DYNAMIC_DOWNCAST (CGanttView,
-			GetNextView (pos));
-
-		if (pView != NULL)
-		{
-			pView->UpdateGantt (options);
-		}
-	}
 }
 
 void CBCGPOrganizerDoc::SetModifiedFlag(BOOL bModified/* = TRUE*/)
 {
-	if (m_Mode == e_ModeCalendar)
-	{
-		m_bCalendarModified = bModified;
-	}
 }
 
 BOOL CBCGPOrganizerDoc::SaveModified()
 {
-	if (m_bCalendarModified)
-	{
-		CCalendarPlannerView* pView = DYNAMIC_DOWNCAST(CCalendarPlannerView, GetView (e_ModeCalendar));
-
-		if (pView != NULL)
-		{
-			ASSERT_VALID (pView);
-			pView->Save (m_strPath);
-		}
-	}
-
 	return TRUE;
 }
 
@@ -314,15 +273,6 @@ void CBCGPOrganizerDoc::UpdateZoom (int index)
 		if (pFrame != NULL)
 		{
 			index = pFrame->GetZoomSlider ()->GetPos ();
-		}
-	}
-
-	if (GetMode () == e_ModeGantt)
-	{
-		CGanttView* pView = DYNAMIC_DOWNCAST (CGanttView, GetView (CBCGPOrganizerDoc::e_ModeGantt));
-		if (pView != NULL)
-		{
-			pView->UpdateZoom (index);
 		}
 	}
 }

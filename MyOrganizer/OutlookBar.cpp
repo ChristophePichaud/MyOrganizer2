@@ -103,27 +103,6 @@ BOOL COutlookBar::Create (LPCTSTR lpszCaption, CWnd* pParentWnd,
 		return FALSE;
 	}
 
-	if (!m_wndShortcutsBar.Create (this, IDC_SHORTCUTSBAR_SHORTCUTS))
-	{
-		TRACE0("Failed to create shortcuts tab\n");
-		return FALSE;      // fail to create
-	}
-	pShortcutsBarContainer->AddTab (&m_wndShortcutsBar, c_ViewNames[CBCGPOrganizerDoc::e_ModeShortcuts], CBCGPOrganizerDoc::e_ModeShortcuts, FALSE);
-
-	if (!m_wndMailBar.Create (this, IDC_SHORTCUTSBAR_MAIL))
-	{
-		TRACE0("Failed to create mail tab\n");
-		return FALSE;      // fail to create
-	}
-	pShortcutsBarContainer->AddTab (&m_wndMailBar, c_ViewNames[CBCGPOrganizerDoc::e_ModeMail], CBCGPOrganizerDoc::e_ModeMail, FALSE);
-
-	if (!m_wndCalendarBar.Create (this, IDC_SHORTCUTSBAR_PLANNER))
-	{
-		TRACE0("Failed to create calendar tab\n");
-		return FALSE;      // fail to create
-	}
-	pShortcutsBarContainer->AddTab (&m_wndCalendarBar, c_ViewNames[CBCGPOrganizerDoc::e_ModeCalendar], CBCGPOrganizerDoc::e_ModeCalendar, FALSE);
-
 	if (!m_wndTasksBar.Create (this, IDC_SHORTCUTSBAR_TASKS))
 	{
 		TRACE0("Failed to create tasks tab\n");
@@ -138,13 +117,6 @@ BOOL COutlookBar::Create (LPCTSTR lpszCaption, CWnd* pParentWnd,
 	}
 	pShortcutsBarContainer->AddTab (&m_wndMacrosBar, c_ViewNames[CBCGPOrganizerDoc::e_ModeMacros], CBCGPOrganizerDoc::e_ModeMacros, FALSE);
 	
-	if (!m_wndGanttBar.Create (this, IDC_SHORTCUTSBAR_GANTT))
-	{
-		TRACE0("Failed to create gantt tab\n");
-		return FALSE;      // fail to create
-	}
-	pShortcutsBarContainer->AddTab (&m_wndGanttBar, c_ViewNames[CBCGPOrganizerDoc::e_ModeGantt], CBCGPOrganizerDoc::e_ModeGantt, FALSE);
-
 	SetButtonsFont (&globalData.fontBold);
 	EnableSetCaptionTextToTabName (TRUE);
 
@@ -248,19 +220,5 @@ int COutlookBar::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 LRESULT COutlookBar::OnCalendarSelChanged(WPARAM, LPARAM)
 {
-	CMainFrame* pFrame = DYNAMIC_DOWNCAST (CMainFrame, GetTopLevelFrame ());
-	if (pFrame != NULL)
-	{
-		CList<DATE, DATE&> lstDates;
-		m_wndCalendarBar.GetSelectedDates (lstDates);
-
-		COleDateTime date1;
-		COleDateTime date2;
-
-		CBCGPCalendar::GetMinMaxSelection (lstDates, date1, date2);
-
-		pFrame->SetDateInterval (date1, date2);
-	}
-
 	return 0;
 }

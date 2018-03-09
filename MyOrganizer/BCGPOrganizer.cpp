@@ -230,22 +230,6 @@ BOOL CBCGPOrganizerApp::InitInstance()
 		RUNTIME_CLASS (CRibbonTooltipCtrl),
 		&params);
 	
-	if (m_OptionsPlanner.m_ShowToolTip == 2)
-	{
-		GetTooltipManager ()->SetTooltipParams (
-			BCGP_TOOLTIP_TYPE_PLANNER,
-			RUNTIME_CLASS (CPlannerTooltipCtrl),
-			&params);
-	}
-
-	if (m_OptionsGantt.m_ShowToolTip == 2)
-	{
- 		GetTooltipManager ()->SetTooltipParams (
- 			BCGP_TOOLTIP_TYPE_GANTT,
- 			RUNTIME_CLASS (CGanttTooltipCtrl),
- 			&params);
-	}
-
 	// Register the application's document templates.  Document templates
 	//  serve as the connection between documents, frame windows and views.
 
@@ -304,19 +288,9 @@ void CBCGPOrganizerApp::PreLoadState ()
 	CBCGPContextMenuManager* pManager = GetContextMenuManager();
 
 	pManager->AddMenu (_T("Output"), IDR_OUTPUT_MENU);
-	pManager->AddMenu (_T("Mail"), IDR_MAIL_MENU);
-	pManager->AddMenu (_T("Planner Appointment"), IDR_PLANNER_APPOINTMENT);
-	pManager->AddMenu (_T("Planner Time Bar"), IDR_PLANNER_TIMEBAR);
-	pManager->AddMenu (_T("Planner Day View"), IDR_PLANNER_CLIENT_DAY);
-	pManager->AddMenu (_T("Planner Work Week View"), IDR_PLANNER_CLIENT_WORK_WEEK);
-	pManager->AddMenu (_T("Planner Week View"), IDR_PLANNER_CLIENT_WEEK);
-	pManager->AddMenu (_T("Planner Month View"), IDR_PLANNER_CLIENT_MONTH);
-	pManager->AddMenu (_T("Planner Schedule View"), IDR_PLANNER_CLIENT_SCHEDULE);
 	pManager->AddMenu (_T("Tasks"), IDR_TASKS_MENU);
 	pManager->AddMenu (_T("Macros Edit"), IDR_EDIT_MENU);
 	pManager->AddMenu (_T("Macros Edit Margin"), IDR_EDIT_POPUP_SELECTIONMARGIN);
-	pManager->AddMenu (_T("Gantt View"), IDR_GANTT_CLIENT);
-	pManager->AddMenu (_T("Gantt Task"), IDR_GANTT_TASK);
 	
 	pManager->AddMenu (_T("Edit"), IDR_EDITCTRL_MENU);
 	//pManager->AddMenu (_T("Category"), IDR_CATEGORY_MENU);
@@ -324,80 +298,10 @@ void CBCGPOrganizerApp::PreLoadState ()
 
 void CBCGPOrganizerApp::UpdateCalendar (BOOL bUpdateCalendar /*= TRUE*/)
 {
-	CMainFrame* pFrame = (CMainFrame*) AfxGetMainWnd ();
-	ASSERT_VALID (pFrame);
-
-	if (bUpdateCalendar)
-	{
-		CBCGPOrganizerDoc* pDoc = (CBCGPOrganizerDoc*) 
-			pFrame->GetActiveDocument ();
-
-		if (pDoc != NULL)
-		{
-			ASSERT_VALID (pDoc);
-			pDoc->UpdateCalendar (m_OptionsPlanner);
-		}
-
-		pFrame->UpdateCalendar ();
-	}
-	else
-	{
-		//DR:
-		//pFrame->GetPropBar ().Update ();
-	}
-
-	//------------------------
-	// Set tooltip parameters:
-	//------------------------
-	CBCGPToolTipParams params;
-	params.m_bVislManagerTheme = TRUE;
-	globalData.m_nMaxToolTipWidth = 150;
-
-	GetTooltipManager ()->SetTooltipParams (
-		BCGP_TOOLTIP_TYPE_PLANNER,
-		m_OptionsPlanner.m_ShowToolTip == 2 ?
-			RUNTIME_CLASS (CPlannerTooltipCtrl) :
-			RUNTIME_CLASS (CBCGPToolTipCtrl),
-		&params);
 }
 
 void CBCGPOrganizerApp::UpdateGantt (BOOL bUpdateGantt /*= TRUE*/)
 {
-	CMainFrame* pFrame = (CMainFrame*) AfxGetMainWnd ();
-	ASSERT_VALID (pFrame);
-
-	if (bUpdateGantt)
-	{
-		CBCGPOrganizerDoc* pDoc = (CBCGPOrganizerDoc*) 
-			pFrame->GetActiveDocument ();
-
-		if (pDoc != NULL)
-		{
-			ASSERT_VALID (pDoc);
-			pDoc->UpdateGantt (m_OptionsGantt);
-		}
-
-		pFrame->UpdateCalendar ();
-	}
-	else
-	{
-		//DR:
-		//pFrame->GetPropBar ().Update ();
-	}
-
-	//------------------------
-	// Set tooltip parameters:
-	//------------------------
-	CBCGPToolTipParams params;
-	params.m_bVislManagerTheme = TRUE;
-	globalData.m_nMaxToolTipWidth = 150;
-
-	GetTooltipManager ()->SetTooltipParams (
-		BCGP_TOOLTIP_TYPE_GANTT,
-		m_OptionsGantt.m_ShowToolTip == 2 ?
-			RUNTIME_CLASS (CPlannerTooltipCtrl) :
-			RUNTIME_CLASS (CBCGPToolTipCtrl),
-		&params);
 }
 
 void CBCGPOrganizerApp::OnBeforeChangeVisualTheme(CBCGPAppOptions& appOptions, CWnd* pMainWnd)
