@@ -34,9 +34,6 @@
     <Filter Include="Resource Files\Gantt_res">
       <UniqueIdentifier>{3d02c94c-6819-4f15-aac6-17358b5360b0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Planner">
-      <UniqueIdentifier>{e8e374db-d4d5-4cb3-99d2-3e443b7baf82}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Views">
       <UniqueIdentifier>{60552363-5fc3-49e5-abae-24bfa7403fb3}</UniqueIdentifier>
     </Filter>
@@ -45,15 +42,6 @@
     </Filter>
     <Filter Include="MacrosEdit">
       <UniqueIdentifier>{329781ec-f672-42c1-9734-54bceb41bcdb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Mail">
-      <UniqueIdentifier>{40f87e8a-a47f-45f8-b24e-c315f85989bd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Tasks">
-      <UniqueIdentifier>{6e74d534-7160-45f8-b666-069d15ef8599}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Gantt">
-      <UniqueIdentifier>{a2100475-b818-43ba-8c31-ed5bb1bd0c78}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -120,16 +108,7 @@
     <ClCompile Include="Views\TasksView.cpp">
       <Filter>Views</Filter>
     </ClCompile>
-    <ClCompile Include="CalendarBar.cpp">
-      <Filter>Bars</Filter>
-    </ClCompile>
     <ClCompile Include="MacrosBar.cpp">
-      <Filter>Bars</Filter>
-    </ClCompile>
-    <ClCompile Include="MailBar.cpp">
-      <Filter>Bars</Filter>
-    </ClCompile>
-    <ClCompile Include="OutlookBar.cpp">
       <Filter>Bars</Filter>
     </ClCompile>
     <ClCompile Include="OutputBar.cpp">
@@ -146,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="MacrosEdit\GotoLineDlg.cpp">
       <Filter>MacrosEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="OutlookBar.cpp">
+      <Filter>Bars</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -220,16 +202,7 @@
     <ClInclude Include="Views\TasksView.h">
       <Filter>Views</Filter>
     </ClInclude>
-    <ClInclude Include="CalendarBar.h">
-      <Filter>Bars</Filter>
-    </ClInclude>
     <ClInclude Include="MacrosBar.h">
-      <Filter>Bars</Filter>
-    </ClInclude>
-    <ClInclude Include="MailBar.h">
-      <Filter>Bars</Filter>
-    </ClInclude>
-    <ClInclude Include="OutlookBar.h">
       <Filter>Bars</Filter>
     </ClInclude>
     <ClInclude Include="OutputBar.h">
@@ -246,6 +219,9 @@
     </ClInclude>
     <ClInclude Include="MacrosEdit\GotoLineDlg.h">
       <Filter>MacrosEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="OutlookBar.h">
+      <Filter>Bars</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
