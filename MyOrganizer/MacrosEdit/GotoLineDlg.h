@@ -1,15 +1,3 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
-//
 #if !defined(AFX_GOTOLINEDLG_H__7BC09FDD_9392_4DFD_A141_FD599212DCED__INCLUDED_)
 #define AFX_GOTOLINEDLG_H__7BC09FDD_9392_4DFD_A141_FD599212DCED__INCLUDED_
 

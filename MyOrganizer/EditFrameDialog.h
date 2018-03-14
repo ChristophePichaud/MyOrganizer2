@@ -1,15 +1,3 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
-//
 #if !defined(AFX_EDITFRAMEDIALOG_H__3186A04E_496E_4D95_8954_F08A5951D560__INCLUDED_)
 #define AFX_EDITFRAMEDIALOG_H__3186A04E_496E_4D95_8954_F08A5951D560__INCLUDED_
 

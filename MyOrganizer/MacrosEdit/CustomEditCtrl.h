@@ -1,15 +1,3 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
-//
 #if !defined(AFX_CUSTOMEDITCTRL_H__086075A9_8FCA_49AF_A2CD_1F3EB13AFF50__INCLUDED_)
 #define AFX_CUSTOMEDITCTRL_H__086075A9_8FCA_49AF_A2CD_1F3EB13AFF50__INCLUDED_
 

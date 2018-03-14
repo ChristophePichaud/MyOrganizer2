@@ -1,15 +1,3 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
-//
 #if !defined(AFX_RIBBONTOOLTIPCTRL_H__93FA8008_02A7_4511_BFB5_EF3DBB61F2C1__INCLUDED_)
 #define AFX_RIBBONTOOLTIPCTRL_H__93FA8008_02A7_4511_BFB5_EF3DBB61F2C1__INCLUDED_
 

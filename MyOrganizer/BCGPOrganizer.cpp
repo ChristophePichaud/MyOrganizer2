@@ -296,14 +296,6 @@ void CBCGPOrganizerApp::PreLoadState ()
 	//pManager->AddMenu (_T("Category"), IDR_CATEGORY_MENU);
 }
 
-void CBCGPOrganizerApp::UpdateCalendar (BOOL bUpdateCalendar /*= TRUE*/)
-{
-}
-
-void CBCGPOrganizerApp::UpdateGantt (BOOL bUpdateGantt /*= TRUE*/)
-{
-}
-
 void CBCGPOrganizerApp::OnBeforeChangeVisualTheme(CBCGPAppOptions& appOptions, CWnd* pMainWnd)
 {
 	CBCGPWinApp::OnBeforeChangeVisualTheme(appOptions, pMainWnd);

@@ -1,15 +1,3 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
-//
 #if !defined(AFX_MAINBUTTONSGROUP_H__DA3A1C0B_543C_4DD4_AC46_502F7294DA04__INCLUDED_)
 #define AFX_MAINBUTTONSGROUP_H__DA3A1C0B_543C_4DD4_AC46_502F7294DA04__INCLUDED_
 

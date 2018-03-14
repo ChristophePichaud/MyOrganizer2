@@ -1,14 +1,3 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
 //
 // BCGPOrganizer.h : main header file for the BCGPORGANIZER application
 //
@@ -84,9 +73,6 @@ class CBCGPOrganizerApp : public CBCGPWinApp
 {
 public:
 	CBCGPOrganizerApp();
-
-	void UpdateCalendar (BOOL bUpdateCalendar = TRUE);
-	void UpdateGantt (BOOL bUpdateGantt = TRUE);
 
 	// Override from CBCGPWorkspace
 	virtual void PreLoadState ();

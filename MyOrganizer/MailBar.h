@@ -1,15 +1,3 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
-//
 #if !defined(AFX_MAILBAR_H__00D25365_98E4_44F5_A634_A01A7101B338__INCLUDED_)
 #define AFX_MAILBAR_H__00D25365_98E4_44F5_A634_A01A7101B338__INCLUDED_
 

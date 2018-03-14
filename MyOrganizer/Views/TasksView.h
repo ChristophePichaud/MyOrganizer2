@@ -1,14 +1,4 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
+
 //
 #if !defined(AFX_TASKSVIEW_H__76AA4A51_90F5_4F11_9404_EC70573E2CCA__INCLUDED_)
 #define AFX_TASKSVIEW_H__76AA4A51_90F5_4F11_9404_EC70573E2CCA__INCLUDED_

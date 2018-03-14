@@ -748,6 +748,40 @@
     <None Include="res\Gantt\toolbar_hc.png" />
     <None Include="xptheme.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Background1.png" />
+    <Image Include="res\Background2.png" />
+    <Image Include="res\Background3.PNG" />
+    <Image Include="res\Background4.PNG" />
+    <Image Include="res\Background5.PNG" />
+    <Image Include="res\Background6.PNG" />
+    <Image Include="res\bs_watermark.png" />
+    <Image Include="res\home_dark.png" />
+    <Image Include="res\MacrosEdit\break.bmp" />
+    <Image Include="res\Mail\buttons.png" />
+    <Image Include="res\Mail\file_large.png" />
+    <Image Include="res\Mail\file_small.png" />
+    <Image Include="res\Mail\flags.png" />
+    <Image Include="res\Mail\header.png" />
+    <Image Include="res\Mail\home_large.png" />
+    <Image Include="res\Mail\home_small.png" />
+    <Image Include="res\Mail\options_large.png" />
+    <Image Include="res\Mail\options_small.PNG" />
+    <Image Include="res\Mail\send.bmp" />
+    <Image Include="res\Planner\bs_print_type.png" />
+    <Image Include="res\Planner\buttons.png" />
+    <Image Include="res\Planner\file_large.png" />
+    <Image Include="res\Planner\file_small.png" />
+    <Image Include="res\Planner\updown.bmp" />
+    <Image Include="res\Shortcuts\shortcuts_bs.png" />
+    <Image Include="res\showas.bmp" />
+    <Image Include="res\showas_hc.png" />
+    <Image Include="res\Tasks\header.png" />
+    <Image Include="res\ThemeColors.png" />
+    <Image Include="res\ThemeEffects.png" />
+    <Image Include="res\ThemeFonts.png" />
+    <Image Include="res\ThemeThemes.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,15 +1,3 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
-//
 #if !defined(AFX_RIBBONLISTBUTTON_H__46553F75_B494_4B85_A707_701639C71BD7__INCLUDED_)
 #define AFX_RIBBONLISTBUTTON_H__46553F75_B494_4B85_A707_701639C71BD7__INCLUDED_
 

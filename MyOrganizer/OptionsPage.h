@@ -1,14 +1,3 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
 //
 #if !defined(AFX_OPTIONSPAGE_H__31F01121_D253_4175_9CD9_69615717107E__INCLUDED_)
 #define AFX_OPTIONSPAGE_H__31F01121_D253_4175_9CD9_69615717107E__INCLUDED_

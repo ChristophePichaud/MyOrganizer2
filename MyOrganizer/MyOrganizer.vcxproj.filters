@@ -517,4 +517,102 @@
       <Filter>Resource Files</Filter>
     </CustomBuildStep>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Mail\send.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\showas.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Planner\updown.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\MacrosEdit\break.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Background1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Background2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Background3.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Background4.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Background5.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Background6.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Planner\bs_print_type.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bs_watermark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Planner\buttons.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mail\buttons.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mail\file_large.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Planner\file_large.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mail\file_small.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Planner\file_small.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mail\flags.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mail\header.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Tasks\header.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\home_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mail\home_large.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mail\home_small.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mail\options_large.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mail\options_small.PNG">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Shortcuts\shortcuts_bs.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\showas_hc.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ThemeColors.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ThemeEffects.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ThemeFonts.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ThemeThemes.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

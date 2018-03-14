@@ -1,15 +1,3 @@
-//*******************************************************************************
-// COPYRIGHT NOTES
-// ---------------
-// This is a sample for BCGControlBar Library Professional Edition
-// Copyright (C) 1998-2018 BCGSoft Ltd.
-// All rights reserved.
-//
-// This source code can be used, distributed or modified
-// only under terms and conditions 
-// of the accompanying license agreement.
-//*******************************************************************************
-//
 #if !defined(AFX_BACKSTAGEPAGEPRINT_H__080E2FC7_C2A5_49C7_A6D3_00171E307EC7__INCLUDED_)
 #define AFX_BACKSTAGEPAGEPRINT_H__080E2FC7_C2A5_49C7_A6D3_00171E307EC7__INCLUDED_
 
